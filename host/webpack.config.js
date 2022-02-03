@@ -1,4 +1,3 @@
-
 const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -22,10 +21,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
@@ -61,7 +56,6 @@ module.exports = {
           singleton: true, // only a single version of the shared module is allowed
         },
       },
-      
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',

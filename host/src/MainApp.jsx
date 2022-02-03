@@ -33,11 +33,9 @@ function MainApp() {
       </h1>
       <div style={{ marginTop: '2em', color: 'Red', fontSize: '60px' }}>
         <React.Suspense fallback="Loading...">
-          <div style={{ fontSize: '30px', color: 'blueviolet' }}>
-            {microApps.map((item) => (
-              <MicroApp key={item.url} module={item.module} scope={item.scope} url={item.url} />
-            ))}
-          </div>
+          {microApps.map((item) => (
+            <MicroApp key={item.url} module={item.module} scope={item.scope} url={item.url} />
+          ))}
         </React.Suspense>
       </div>
     </>
