@@ -13,11 +13,13 @@ function App() {
   }, []);
 
   return (
-    <React.Suspense fallback="Loading System">
-      {microApps.map((item) => {
-        return <MicroApp module={item.module} scope={item.scope} url={item.url} />;
-      })}
-    </React.Suspense>
+    <div>
+      <React.Suspense fallback={`Loading `}>
+        {microApps.map((item) => (
+          <MicroApp key={item.url} module={item.module} scope={item.scope} url={item.url} />
+        ))}
+      </React.Suspense>
+    </div>
   );
 }
 
