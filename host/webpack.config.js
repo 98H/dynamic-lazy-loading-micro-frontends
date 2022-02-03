@@ -1,5 +1,4 @@
-// const data =  require('./src/MainAppData');
-// const  data = fetch('https://micro-frontends-api.vercel.app/api/main-app-api').then(response => response.json());
+
 const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -51,10 +50,17 @@ module.exports = {
       exposes: {
         './RemoteApp': './src/RemoteWrapper',
       },
-      // remotes: {
-      //   App1: new Promise(resolve => resolve(fetch('https://micro-frontends-api.vercel.app/api/main-app-api').then(response => console.log(response.json()).remotes.App1))),
-      //   App2: 'App2@http://localhost:3002/remoteEntry.js',
-      // },
+      shared: {
+        react: {
+          import: 'react', // the "react" package will be used a provided and fallback module
+          shareKey: 'react', // under this name the shared module will be placed in the share scope
+          shareScope: 'default', // share scope with this name will be used
+          singleton: true, // only a single version of the shared module is allowed
+        },
+        'react-dom': {
+          singleton: true, // only a single version of the shared module is allowed
+        },
+      },
       
     }),
     new HtmlWebpackPlugin({
