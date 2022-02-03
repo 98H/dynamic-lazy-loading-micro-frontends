@@ -24,7 +24,7 @@ function MainApp() {
         <h1>Micro Apps Load Lazily And Dynamically</h1>
         <p>
           The Dynamic System will take advantage Module Federation <strong>remotes</strong> and{' '}
-          <strong>exposes</strong>.Also it will no load components that have been loaded already.
+          <strong>exposes</strong>. Also it will no load components that have been loaded already.
         </p>
       </div>
       <h1>
