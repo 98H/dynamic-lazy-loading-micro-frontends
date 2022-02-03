@@ -2,12 +2,11 @@
 
 import './styles.css';
 import React from 'react';
-// import MainApp from './MainApp';
-import App from './App';
+import MainApp from './MainApp';
 
 
 const RemoteWrapper = function () {
-  return <App />;
+  return <MainApp />;
 };
 
 export default RemoteWrapper;

@@ -1,18 +1,7 @@
-import React, { useState } from 'react';
-import fetchApp1Api from './simulated-apis/app1-api';
+import React from 'react';
 
 function App1() {
-  const [text, setText] = useState(null);
-
-  useState(() => {
-    fetchApp1Api()
-      .then((response) => response.json())
-      .then((t) => {
-        setText(t);
-      });
-  }, text);
-
-  return <div>{text}</div>;
+  return <div>App 1 Loaded.</div>;
 }
 
 export default App1;
