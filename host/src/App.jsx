@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MicroApp from './MicroApp';
-import fetchMainAppApi from './simulated-apis/main-app-api';
+import fetchMainAppApi from './simulated-api/main-app-api';
 
 function App() {
   const [microApps, setMicroApps] = useState([]);
